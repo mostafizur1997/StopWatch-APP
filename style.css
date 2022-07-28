@@ -1,0 +1,18 @@
+body{
+    background: url(https://freenaturestock.com/wp-content/uploads/freenaturestock-206-768x1152.jpeg) center center fixed;
+    background-size: cover;
+    color: #fff;
+
+}
+
+#header{
+    font-size: 7vw;
+    text-align: center;
+}
+
+#lap{
+    font-size: 5vw;
+    text-align: right;
+
+}
+
