@@ -9,7 +9,7 @@ body{
     font-size: 7vw;
     text-align: center;
 }
-
+ 
 #lap{
     font-size: 5vw;
     text-align: right;
@@ -19,4 +19,32 @@ body{
 #Time{
     font-size: 8vw;
     text-align: center;
+}
+
+
+#controlsContainer{
+    margin-bottom: 100px;
+}
+.control{
+    color: #fff;
+    background-color: #d7A04e;
+    height: 10vw;
+    width: 10vw;
+    border-radius: 100%;
+    text-align: center; 
+    padding: 20% 0;
+    font-size: 2.5vw;
+    cursor: pointer;
+}
+
+.control:active{
+    background-color: #fff;
+    color: #d7A04e;
+    
+}
+
+#laps{
+    max-height: 270px;
+    overflow-y: scroll;
+
 }
