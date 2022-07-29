@@ -22,6 +22,45 @@ $("#startButton").click(function(){
     //start counter
     startAction();
 });
+
+//click on the stopButton
+$("#stopButton").click(function(){
+    //show resume and reset button
+    hideshowButtons("#resumeButton", "#resetButton");
+    //stop counter
+    clearInterval(action);
+});
+
+//click resumeButton
+$("#resumeButton").click(function(){
+    // show stopButton and lap button
+    hideshowButtons("#stopButton","#lapButton");
+    //startCounter
+    startAction();
+});
+
+//click on lapButton
+$("#resetButton").click(function(){
+    //reload the page
+    location.reload();
+});
+
+//click on lapButton
+$("#lapButton").click(function(){
+//if mode is on
+    if(mode){
+    //stop action
+    clearInterval(action);
+    //resetLap and print details    
+    lapCounter=0;
+    addLap();
+    //start action
+    startAction();
+
+}
+});
+
+
 //mode on
 //show startButton and lapButton
 //start action
@@ -73,6 +112,7 @@ function updateTime(){
     $("#lapCentisecond").text(format(lapCentiseconds));
 
 }
+
 //format number
 function format(number){
     if(number<0){
@@ -81,6 +121,22 @@ function format(number){
     else{
         return number;
     }
+}
+
+//add lap function: print lap details and inside the lap
+function addLap(){
+    lapNumber++;
+        var mylapDetails='<div class="lap">'+
+        '<div class="lapTitle">'+'Lap'+lapNumber+'</div>'+
+
+        '<div class="laptime">'+
+        '<span>'+lapMinutes+'</span>'
+        +':<span>'+lapSeconds+'</span>'
+        +'<span>'+lapSeconds+'</span>'
+        +'</div>'
+    +'</div>';
+    $(mylapDetails).prependTo("#laps");
+
 }
 
 });
